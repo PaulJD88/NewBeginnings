@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form of Life</title>
+<style>
+    * {
+  box-sizing: border-box;
+}
+body {
+  background-color: rgb(252, 238, 186);
+}
+.container{
+    background-color: rgb(248, 234, 237);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 10px;
+    border: solid whitesmoke;    
+}
+h1, h2 {
+  text-align: center;
+  text-decoration: underline;
+  font-family: 'Courier New', Courier, monospace;
+}
+p {
+  font-family: 'Courier New', Courier, monospace;
+  display: inline-block;
+}
+img {
+  display: none;
+  height: 200px;
+  width: 200px;
+}
+.calculator, .name {
+  padding: 10px;
+  border-bottom: dotted whitesmoke
+}
+.teenage {
+  padding: 10px;
+}
+label {
+  padding: 12px 12px 12px 12px;
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  color: black;
+}
+fieldset {
+  padding: 12px 12px 12px 12px;
+  display: inline-block;
+  font-family: 'Courier New', Courier, monospace;
+  color:whitesmoke;
+  background-color: rgb(22, 10, 133);
+  border-radius: 4px;
+  border-color: rgb(252, 238, 186);
+  font-family: 'Courier New', Courier, monospace;
+}
+input[type=text], select, textarea {
+  width: 75%;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid rgb(140, 238, 217);
+  border-radius: 4px;
+  resize: vertical;
+}
+input[type=number], select, textarea {
+  width: 75%;
+  padding: 10px;
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid rgb(140, 238, 217);
+  border-radius: 4px;
+  resize: vertical;
+}
+.col-25 {
+  float: left;
+  width: 30%;
+  margin-top: 6px;
+}
+.col-75 {
+  float: left;
+  width: 70%;
+  margin-top: 6px;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media screen and (max-width: 600px) {
+  .col-25, .col-75, input[type=submit] {
+    width: 100%;
+    margin-top: 0;
+  }}
+  .buttons {
+    background-color: rgb(140, 238, 217);
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 20px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .buttons:hover {opacity: 1}
+
+  .button1 {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: rgb(140, 238, 217);
+    border: none;
+    color: whitesmoke;
+    text-align: center;
+    font-size: 28px;
+    padding: 20px;
+    width: 200px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+  }
+  
+  .button1 span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
+  
+  .button1 span:after {
+    content: '\00bb';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
+  
+  .button1:hover span {
+    padding-right: 25px;
+  }
+  
+  .button1:hover span:after {
+    opacity: 1;
+    right: 0;
+  }
+
+  .button2 {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 15px;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background-color: rgb(140, 238, 217);
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 9px #999;
+  }
+  
+  .button2:hover {background-color: rgb(65, 201, 171)}
+  
+  .button2:active {
+    background-color: rgb(140, 238, 217);
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+  }
+</style>
+</head>
+<body>
+    <script>
+        console.log("hello world!");
+
+        function calculator(num1, num2, operation) {
+            if (operation === "add") {
+                console.log(num1 + num2);
+            }
+            if (operation === "subtract") {
+                console.log(num1 - num2);
+            }
+            if (operation === "multiply") {
+                console.log(num1 * num2);
+            }
+            if (operation === "divide") {
+                if (num2 === 0) { 
+                    console.log("You silly sausage, you can't divide by 0!");
+                } else {
+                    console.log(num1 / num2);
+                }
+            }
+        }
+        function nameGenerator(firstname, lastname) {
+            return firstname + " " + lastname;
+        }  
+
+        function isTeenager(age) {
+            console.log(age);
+            if (age >= 13 && age < 20) {
+              return true;
+            }
+            return false;
+        }
+        function onAdd() {
+            console.log("About to Add");
+            let number1 = document.getElementById("input1").value;
+            let number2 = document.getElementById("input2").value;
+            console.log(number1)
+            console.log(number2)
+            console.log(typeof number1)
+            console.log(typeof parseFloat(number1))
+            console.log(number1 + number1)
+            console.log(parseFloat(number1) + parseFloat(number1));
+            calculator(parseFloat(number1), parseFloat(number2), "add");
+            document.getElementById("result").innerHTML = (parseFloat(number1) + parseFloat(number2));
+            document.getElementById("rounded").innerHTML = Math.round(parseFloat(number1) + parseFloat(number2));
+        }
+        function onSubtract() {
+            console.log("About to Subtract");
+            let number1 = document.getElementById("input1").value;
+            let number2 = document.getElementById("input2").value;
+            calculator(parseFloat(number1), parseFloat(number2), "subtract");
+            document.getElementById("result").innerHTML = (parseFloat(number1) - parseFloat(number2));
+            document.getElementById("rounded").innerHTML = Math.round(parseFloat(number1) - parseFloat(number2));
+        }
+        function onDivide() {
+            console.log("About to Divide");
+            let number1 = document.getElementById("input1").value;
+            let number2 = document.getElementById("input2").value;
+            calculator(parseFloat(number1), parseFloat(number2), "divide");
+            document.getElementById("result").innerHTML = (parseFloat(number1) / parseFloat(number2));
+            document.getElementById("rounded").innerHTML = Math.round(parseFloat(number1) / parseFloat(number2));
+        }
+        function onMultiply() {
+            console.log("About to Multiply");
+            let number1 = document.getElementById("input1").value;
+            let number2 = document.getElementById("input2").value;
+            calculator(parseFloat(number1), parseFloat(number2), "multiply");
+            document.getElementById("result").innerHTML = (parseFloat(number1) * parseFloat(number2));
+            document.getElementById("rounded").innerHTML = Math.round(parseFloat(number1) * parseFloat(number2));
+        }
+
+        function onCombineNames() {
+            console.log("About to combine names!");
+            let name1 = document.getElementById("input3").value;
+            let name2 = document.getElementById("input4").value;
+            console.log(name1)
+            console.log(name2)
+            console.log(nameGenerator(name1, name2));
+            document.getElementById("result1").innerHTML = (nameGenerator(name1, name2));
+        }
+
+        function onTeenagerCorrect() {
+            console.log("About to check age");
+            let age1 = document.getElementById("input5").value;
+            let isTeenagerState = isTeenager(age1);
+            console.log(isTeenagerState);
+            document.getElementById("result2").innerHTML = (isTeenagerState);
+            let image = document.getElementById("result3");
+            if (isTeenagerState) {
+                image.style.display = 'block';
+            }
+        }
+        console.log(isTeenager(15));
+        console.log(isTeenager(11));
+        console.log(isTeenager(34));
+        console.log(isTeenager(13));
+        console.log(isTeenager(12.5));
+        console.log(isTeenager(19.5));
+
+        let fullName = nameGenerator("Spongebob", "Squarepants");
+        console.log(fullName);
+
+        console.log(nameGenerator("Jimmeny", "Cricket"));
+
+        calculator(4, 12, "add");
+        calculator(4, 8, "subtract");
+        calculator(5, 65, "multiply");
+        calculator(10, 0, "divide");
+    </script>
+
+<h1>Form of Life</h1>
+<div class="container">
+    <div class="calculator">
+        <h2>A calculator of sorts</h2>
+        <div class="row">
+            <div class="col-25">
+              <label for="fname">First Number</label>
+            </div>
+            <div class="col-75">
+              <input type="number" id="input1" name="first number" placeholder="First number..">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+              <label for="snumber">Second Number</label>
+            </div>
+            <div class="col-75">
+              <input type="number" id="input2" name="second number" placeholder="Second number...">
+            </div>
+    </div>
+            <button onclick="onAdd()" class="buttons">Add</button>
+            <button onclick="onSubtract()" class="buttons">Subtract</button>
+            <button onclick="onDivide()" class="buttons">Divide</button>
+            <button onclick="onMultiply()" class="buttons">Multiply</button>
+            <p>Result =</p>
+            <fieldset id="result"></fieldset>
+            <p>Rounded =</p>
+            <fieldset id="rounded"></fieldset>
+            
+    </div>
+
+    <div class="name">
+        <h2>What is your name?</h2>
+        <div class="row">
+            <div class="col-25">
+              <label for="fname">First Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="input3" name="firstname" placeholder="Your name..">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-25">
+              <label for="lname">Last Name</label>
+            </div>
+            <div class="col-75">
+              <input type="text" id="input4" name="lastname" placeholder="Your last name..">
+            </div>
+        </div>
+
+            <button onclick="onCombineNames()" class="button1" style="vertical-align:middle"><span>Combine </span></button>
+            <p>Result =</p>
+            <fieldset id="result1"></fieldset>
+    </div>
+            
+    <div class="teenage">
+        <h2>Are you a teenager?</h2>
+        <div class="row">
+            <div class="col-25">
+              <label for="age">Your age</label>
+            </div>
+            <div class="col-75">
+              <input type="number" id="input5" name="age" placeholder="Your age..">
+            </div>
+        </div>
+            <button onclick="onTeenagerCorrect()" class="button2"> Submit</button>
+            <p>Result =</p>
+            <fieldset id="result2"></fieldset>
+            <img id="result3" src="https://placekitten.com/200/300"/>
+    </div>
+</div>
+</body>
+</html>
