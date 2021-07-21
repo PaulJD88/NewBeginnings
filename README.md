@@ -10,3 +10,4 @@
 `git add index.html` - add single file
 `git add -A` - add everything to the staging area
 `git commit -m "Initial commit"` - commit staged files
+`git log` - displays the git history

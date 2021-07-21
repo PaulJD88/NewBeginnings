@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+
+let shoppingList = ["Monkey", "Fishcat", "Dogbone"];
+
+console.log(shoppingList[1]);
+function logger(item) {
+    console.log(item);
+}
+
+shoppingList.forEach(logger);
+let i = 0;
+while (i < 10) {
+    i++;
+    console.log(i);
+}
+console.log(i);
+
+let answer = "7";
+while (true) {
+    let guess = prompt("What number do you think I'm thinking of?");
+    if (answer === guess) {
+        console.log("You are a mindreader!")
+    } else {
+        console.log("Failure")
+    }
+}
+
+
+</script>
+</body>
+</html>
