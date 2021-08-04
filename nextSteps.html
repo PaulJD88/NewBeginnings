@@ -24,11 +24,14 @@ while (i < 10) {
 }
 console.log(i);
 
-let answer = "7";
-while (true) {
+let answer = Math.floor((Math.random() * 10) + 1);
+let correct = false;
+console.log("Here is the answer!", answer);
+while (!correct) {
     let guess = prompt("What number do you think I'm thinking of?");
-    if (answer === guess) {
+    if (answer.toString() === guess) {
         console.log("You are a mindreader!")
+        correct = true;
     } else {
         console.log("Failure")
     }
