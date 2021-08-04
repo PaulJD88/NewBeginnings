@@ -26,18 +26,25 @@ console.log(i);
 
 let answer = Math.floor((Math.random() * 10) + 1);
 let correct = false;
+let guessesCount = 0;
+
 console.log("Here is the answer!", answer);
 while (!correct) {
     let guess = prompt("What number do you think I'm thinking of?");
     if (answer.toString() === guess) {
-        console.log("You are a mindreader!")
+        // console.log("You are a mindreader! " + "You had " + guessesCount + " guesses");
+        console.log(`Your are a genius! You had ${guessesCount} guesses.`)
         correct = true;
     } else {
+        guessesCount++;
         console.log("Failure")
     }
 }
 
 
+
 </script>
 </body>
 </html>
+
+<!-- Tidy up syntax on line 35 -->
