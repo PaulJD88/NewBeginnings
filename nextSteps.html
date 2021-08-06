@@ -25,7 +25,7 @@ while (i < 10) {
 console.log(i);
 
 let answer = Math.floor((Math.random() * 10) + 1);
-let hardAnswer = Math.floor((Math.random() * 100) + 1);
+let answer1 = Math.floor((Math.random() * 100) + 1);
 let correct = false;
 let guessesCount = 0;
 let failed = false;
@@ -40,59 +40,59 @@ console.log("Here is the answer!", answer);
     if (difficultySetting[0] === difficulty) {
         console.log("Ooooh chicken")
         setting = true;
-        }   else if (difficultySetting[1] === difficulty) {
-        console.log("Ooooh middle of the road")
-        setting = true;
-        }   else if (difficultySetting[2] === difficulty) {
-        console.log("Ooooh tricky")        
-        setting = true; 
-        }   else {
-        incorrectSetting = false;
-        console.log(invalidDifficulty)
-        }
-    }
     while (!correct && !failed) {
     let guess = prompt("What number do you think I'm thinking of?");
     if (answer.toString() === guess) {
-        console.log(`Your are a genius! You had ${guessesCount} guesses.`)
+        console.log(`You are a genius! You had ${guessesCount} guesses.`)
         correct = true;
     } else {
         guessesCount++;
-        console.log("Failure")
+        console.log("Guess again")
         if (guessesCount > 3) {
             failed = true;
             console.log("You have failed for the last time")
         }
     }
 }
-    while (!correct && !failed) {
+        }   else if (difficultySetting[1] === difficulty) {
+        console.log("Ooooh middle of the road")
+        setting = true;
+    while (!correct && !failed && difficultySetting[1]) {
     let guess = prompt("What number do you think I'm thinking of?");
     if (answer.toString() === guess) {
-        console.log(`Your are a genius! You had ${guessesCount} guesses.`)
+        console.log(`You are a genius! You had ${guessesCount} guesses.`)
         correct = true;
     } else {
         guessesCount++;
-        console.log("Failure")
+        console.log("Guess again")
         if (guessesCount > 5) {
             failed = true;
             console.log("You have failed for the last time")
         }
     }
 }
-    while (!correct && !failed) {
+        }   else if (difficultySetting[2] === difficulty) {
+        console.log("Ooooh tricky")        
+        setting = true;
+    while (!correct && !failed && difficultySetting[2]) {
     let guess = prompt("What number do you think I'm thinking of?");
-    if (hardAnswer.toString() === guess) {
-        console.log(`Your are a genius! You had ${guessesCount} guesses.`)
+    if (answer1.toString() === guess) {
+        console.log(`You are a genius! You had ${guessesCount} guesses.`)
         correct = true;
     } else {
         guessesCount++;
-        console.log("Failure")
+        console.log("Guess again")
         if (guessesCount > 8) {
             failed = true;
             console.log("You have failed for the last time")
         }
     }
-}
+} 
+        }   else {
+        incorrectSetting = false;
+        console.log(invalidDifficulty)
+        }
+    }
 </script>
 </body>
 </html>
@@ -101,10 +101,6 @@ console.log("Here is the answer!", answer);
 <!-- Remember - open browser - open dev tools - then open link: file:///D:/Projects/newBeginnings/nextSteps.html
     
     Once they've guessed tell them if their guess is too high or too low
-
-    If they type easy - they get 5 guesses
-
-    If they type medium - they get 3 guesses
 
     If they type hard - 8 guesses and they get a random number between 0-100
 
