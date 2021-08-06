@@ -25,52 +25,88 @@ while (i < 10) {
 console.log(i);
 
 let answer = Math.floor((Math.random() * 10) + 1);
+let hardAnswer = Math.floor((Math.random() * 100) + 1);
 let correct = false;
 let guessesCount = 0;
 let failed = false;
 let invalidDifficulty = "Easy, Medium or Hard Please"
 let difficultySetting = ["Easy", "Medium", "Hard"];
+let setting = false;
+let incorrectSetting = false;
 
 console.log("Here is the answer!", answer);
-
+    while (!setting && !incorrectSetting) {
     let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?");
     if (difficultySetting[0] === difficulty) {
         console.log("Ooooh chicken")
-    } 
-    if (difficultySetting[1] === difficulty) {
-        console.log("Ooooh middle of the road")
-    }
-    if (difficultySetting[2] === difficulty) {
-        console.log("Ooooh tricky")
-    } else {
+        setting = true;
+    }   else {
+        incorrectSetting = false;
         console.log(invalidDifficulty)
+        }
     }
-    // if ("Medium" === difficulty) {
-    //     console.log("Ooooh middle of the road")
-    // } else {
-    //         console.log("You idiot!")
-    //     }
-    // if ("Easy" === difficulty) {
-    //     console.log("Oooooh chicken")
-    // } else {
-    //         console.log("You idiot!")
-    //     }
-
-//     while (!correct && !failed) {
-//     let guess = prompt("What number do you think I'm thinking of?");
-//     if (answer.toString() === guess) {
-//         // console.log("You are a mindreader! " + "You had " + guessesCount + " guesses");
-//         console.log(`Your are a genius! You had ${guessesCount} guesses.`)
-//         correct = true;
-//     } else {
-//         guessesCount++;
-//         console.log("Failure")
-//         if (guessesCount > 3) {
-//             failed = true;
-//             console.log("You have failed for the last time")
-//         }
-//     }
-// }
+    while (!correct && !failed) {
+    let guess = prompt("What number do you think I'm thinking of?");
+    if (answer.toString() === guess) {
+        console.log(`Your are a genius! You had ${guessesCount} guesses.`)
+        correct = true;
+    } else {
+        guessesCount++;
+        console.log("Failure")
+        if (guessesCount > 3) {
+            failed = true;
+            console.log("You have failed for the last time")
+        }
+    }
+}
+    while (!setting && !incorrectSetting) {
+    let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?");
+    if (difficultySetting[1] === difficulty) {
+        console.log("Ooooh chicken")
+        setting = true;
+    }   else {
+        incorrectSetting = false;
+        console.log(invalidDifficulty)
+        }
+    }
+    while (!correct && !failed) {
+    let guess = prompt("What number do you think I'm thinking of?");
+    if (answer.toString() === guess) {
+        console.log(`Your are a genius! You had ${guessesCount} guesses.`)
+        correct = true;
+    } else {
+        guessesCount++;
+        console.log("Failure")
+        if (guessesCount > 5) {
+            failed = true;
+            console.log("You have failed for the last time")
+        }
+    }
+}
+    while (!setting && !incorrectSetting) {
+    let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?");
+    if (difficultySetting[2] === difficulty) {
+        console.log("Ooooh chicken")
+        setting = true;
+    }   else {
+        incorrectSetting = false;
+        console.log(invalidDifficulty)
+        }
+    }
+    while (!correct && !failed) {
+    let guess = prompt("What number do you think I'm thinking of?");
+    if (hardAnswer.toString() === guess) {
+        console.log(`Your are a genius! You had ${guessesCount} guesses.`)
+        correct = true;
+    } else {
+        guessesCount++;
+        console.log("Failure")
+        if (guessesCount > 8) {
+            failed = true;
+            console.log("You have failed for the last time")
+        }
+    }
+}
 </script>
 </body>
 </html>
@@ -78,15 +114,13 @@ console.log("Here is the answer!", answer);
 
 <!-- Remember - open browser - open dev tools - then open link: file:///D:/Projects/newBeginnings/nextSteps.html
     
-    Add a prompt to the beginning of the game to ask if they want easy, medium or hard. (let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?") 
-    If they chose hard - say "Ooh tricky" if ("Hard" === difficulty) {
-        console.log("Ooooh tricky")
-    }
-    Add other comments for easy & medium
-    Add another comment if they don't type easy, medium or hard (example "you eedjut")
     Once they've guessed tell them if their guess is too high or too low
+
     If they type easy - they get 5 guesses
+
     If they type medium - they get 3 guesses
+
     If they type hard - 8 guesses and they get a random number between 0-100
+
     CSS + HTML stuff
 -->
