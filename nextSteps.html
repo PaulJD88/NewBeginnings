@@ -40,14 +40,20 @@ console.log("Here is the answer!", answer);
     if (difficultySetting[0] === difficulty) {
         console.log("Ooooh chicken")
         setting = true;
-    }   else {
+        }   else if (difficultySetting[1] === difficulty) {
+        console.log("Ooooh middle of the road")
+        setting = true;
+        }   else if (difficultySetting[2] === difficulty) {
+        console.log("Ooooh tricky")        
+        setting = true; 
+        }   else {
         incorrectSetting = false;
         console.log(invalidDifficulty)
         }
     }
     while (!correct && !failed) {
     let guess = prompt("What number do you think I'm thinking of?");
-    if (answer.toString() === guess) {
+    if (hardAnswer.toString() === guess) {
         console.log(`Your are a genius! You had ${guessesCount} guesses.`)
         correct = true;
     } else {
@@ -59,16 +65,6 @@ console.log("Here is the answer!", answer);
         }
     }
 }
-    while (!setting && !incorrectSetting) {
-    let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?");
-    if (difficultySetting[1] === difficulty) {
-        console.log("Ooooh chicken")
-        setting = true;
-    }   else {
-        incorrectSetting = false;
-        console.log(invalidDifficulty)
-        }
-    }
     while (!correct && !failed) {
     let guess = prompt("What number do you think I'm thinking of?");
     if (answer.toString() === guess) {
@@ -83,16 +79,6 @@ console.log("Here is the answer!", answer);
         }
     }
 }
-    while (!setting && !incorrectSetting) {
-    let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?");
-    if (difficultySetting[2] === difficulty) {
-        console.log("Ooooh chicken")
-        setting = true;
-    }   else {
-        incorrectSetting = false;
-        console.log(invalidDifficulty)
-        }
-    }
     while (!correct && !failed) {
     let guess = prompt("What number do you think I'm thinking of?");
     if (hardAnswer.toString() === guess) {
