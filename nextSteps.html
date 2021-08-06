@@ -28,34 +28,49 @@ let answer = Math.floor((Math.random() * 10) + 1);
 let correct = false;
 let guessesCount = 0;
 let failed = false;
+let invalidDifficulty = "Easy, Medium or Hard Please"
+let difficultySetting = ["Easy", "Medium", "Hard"];
 
 console.log("Here is the answer!", answer);
 
     let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?");
-    if ("Hard" === difficulty) {
+    if (difficultySetting[0] === difficulty) {
+        console.log("Ooooh chicken")
+    } 
+    if (difficultySetting[1] === difficulty) {
+        console.log("Ooooh middle of the road")
+    }
+    if (difficultySetting[2] === difficulty) {
         console.log("Ooooh tricky")
     } else {
-        "Medium" === difficulty;
-        console.log("Oooooh middle of the road")
-        "Easy" === difficulty;
-        console.log("Oooooh chicken")
+        console.log(invalidDifficulty)
     }
+    // if ("Medium" === difficulty) {
+    //     console.log("Ooooh middle of the road")
+    // } else {
+    //         console.log("You idiot!")
+    //     }
+    // if ("Easy" === difficulty) {
+    //     console.log("Oooooh chicken")
+    // } else {
+    //         console.log("You idiot!")
+    //     }
 
-    while (!correct && !failed) {
-    let guess = prompt("What number do you think I'm thinking of?");
-    if (answer.toString() === guess) {
-        // console.log("You are a mindreader! " + "You had " + guessesCount + " guesses");
-        console.log(`Your are a genius! You had ${guessesCount} guesses.`)
-        correct = true;
-    } else {
-        guessesCount++;
-        console.log("Failure")
-        if (guessesCount > 3) {
-            failed = true;
-            console.log("You have failed for the last time")
-        }
-    }
-}
+//     while (!correct && !failed) {
+//     let guess = prompt("What number do you think I'm thinking of?");
+//     if (answer.toString() === guess) {
+//         // console.log("You are a mindreader! " + "You had " + guessesCount + " guesses");
+//         console.log(`Your are a genius! You had ${guessesCount} guesses.`)
+//         correct = true;
+//     } else {
+//         guessesCount++;
+//         console.log("Failure")
+//         if (guessesCount > 3) {
+//             failed = true;
+//             console.log("You have failed for the last time")
+//         }
+//     }
+// }
 </script>
 </body>
 </html>
