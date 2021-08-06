@@ -43,23 +43,11 @@ console.log("Here is the answer!", answer1);
         setting = true;
     while (!correct && !failed) {
     let guess = prompt("What number do you think I'm thinking of?");
-    if (answer.toString() === guess) {
-        console.log(`You are a genius! You had ${guessesCount} guesses.`)
-        correct = true;
-    } else {
-        guessesCount++;
-        console.log("Guess again")
-        if (guessesCount > 3) {
-            failed = true;
-            console.log("You have failed for the last time")
+    if (guess < answer) {
+            console.log("Higher")
+        } else {
+            console.log("Lower")
         }
-    }
-}
-        }   else if (difficultySetting[1] === difficulty) {
-        console.log("Ooooh middle of the road")
-        setting = true;
-    while (!correct && !failed && difficultySetting[1]) {
-    let guess = prompt("What number do you think I'm thinking of?");
     if (answer.toString() === guess) {
         console.log(`You are a genius! You had ${guessesCount} guesses.`)
         correct = true;
@@ -72,11 +60,38 @@ console.log("Here is the answer!", answer1);
         }
     }
 }
+        }   else if (difficultySetting[1] === difficulty) {
+        console.log("Ooooh middle of the road")
+        setting = true;
+    while (!correct && !failed) {
+    let guess = prompt("What number do you think I'm thinking of?");
+    if (guess < answer) {
+            console.log("Higher")
+        } else {
+            console.log("Lower")
+        }
+    if (answer.toString() === guess) {
+        console.log(`You are a genius! You had ${guessesCount} guesses.`)
+        correct = true;
+    } else {
+        guessesCount++;
+        console.log("Guess again")
+        if (guessesCount > 3) {
+            failed = true;
+            console.log("You have failed for the last time")
+        }
+    }
+}
         }   else if (difficultySetting[2] === difficulty) {
         console.log("Ooooh tricky")        
         setting = true;
-    while (!correct && !failed && difficultySetting[2]) {
+    while (!correct && !failed) {
     let guess = prompt("What number do you think I'm thinking of?");
+    if (guess < answer1) {
+            console.log("Higher")
+        } else {
+            console.log("Lower")
+        }
     if (answer1.toString() === guess) {
         console.log(`You are a genius! You had ${guessesCount} guesses.`)
         correct = true;
@@ -101,7 +116,5 @@ console.log("Here is the answer!", answer1);
 
 <!-- Remember - open browser - open dev tools - then open link: file:///D:/Projects/newBeginnings/nextSteps.html
     
-    Once they've guessed tell them if their guess is too high or too low
-
     CSS + HTML stuff
 -->
