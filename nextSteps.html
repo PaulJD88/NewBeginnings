@@ -53,7 +53,7 @@ console.log("Here is the answer!", answer);
     }
     while (!correct && !failed) {
     let guess = prompt("What number do you think I'm thinking of?");
-    if (hardAnswer.toString() === guess) {
+    if (answer.toString() === guess) {
         console.log(`Your are a genius! You had ${guessesCount} guesses.`)
         correct = true;
     } else {
