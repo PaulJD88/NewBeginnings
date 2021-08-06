@@ -27,9 +27,13 @@ console.log(i);
 let answer = Math.floor((Math.random() * 10) + 1);
 let correct = false;
 let guessesCount = 0;
+let failed = false;
 
 console.log("Here is the answer!", answer);
-while (!correct) {
+
+    let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?");
+
+    while (!correct && !failed) {
     let guess = prompt("What number do you think I'm thinking of?");
     if (answer.toString() === guess) {
         // console.log("You are a mindreader! " + "You had " + guessesCount + " guesses");
@@ -38,13 +42,26 @@ while (!correct) {
     } else {
         guessesCount++;
         console.log("Failure")
+        if (guessesCount > 3) {
+            failed = true;
+            console.log("You have failed for the last time")
+        }
     }
 }
-
-
-
 </script>
 </body>
 </html>
 
-<!-- Tidy up syntax on line 35 -->
+
+<!-- Remember - open browser - open dev tools - then open link: file:///D:/Projects/newBeginnings/nextSteps.html
+    
+    Add a prompt to the beginning of the game to ask if they want easy, medium or hard. (let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?") 
+    If they chose hard - say "Ooh tricky"
+    Add other comments for easy & medium
+    Add another comment if they don't type easy, medium or hard (example "you eedjut")
+    Once they've guessed tell them if their guess is too high or too low
+    If they type easy - they get 5 guesses
+    If they type medium - they get 3 guesses
+    If they type hard - 8 guesses and they get a random number between 0-100
+    CSS + HTML stuff
+-->
