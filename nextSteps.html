@@ -36,78 +36,81 @@ let incorrectSetting = false;
 
 console.log("Here is the answer!", answer);
 console.log("Here is the answer!", answer1);
+    
     while (!setting && !incorrectSetting) {
-    let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?");
-    if (difficultySetting[0] === difficulty) {
-        console.log("Ooooh chicken")
-        setting = true;
+        let difficulty = prompt("What's it gonna be punk? Easy? Medium? or Hard?");
+            if (difficultySetting[0] === difficulty) {
+                console.log("Ooooh chicken")
+                setting = true;
+    
     while (!correct && !failed) {
-    let guess = prompt("What number do you think I'm thinking of?");
-    if (guess < answer) {
-            console.log("Higher")
-        } else {
-            console.log("Lower")
-        }
-    if (answer.toString() === guess) {
-        console.log(`Bingpot! You had ${guessesCount} guesses.`)
-        correct = true;
-    } else {
-        guessesCount++;
-        console.log("Guess again")
-        if (guessesCount > 5) {
-            failed = true;
-            console.log("You have failed for the last time")
-        }
+        let guess = prompt("What number do you think I'm thinking of?");
+            if (guess < answer) {
+                console.log("Higher")
+            } else {
+                console.log("Lower")
+            }   
+            if (answer.toString() === guess) {
+                console.log(`Bingpot! You had ${guessesCount} guesses.`)
+                correct = true;
+            } else {
+                guessesCount++;
+                console.log("Guess again")
+            if (guessesCount > 5) {
+                failed = true;
+                console.log("You have failed for the last time")
+            }   
+            }
     }
-}
-        }   else if (difficultySetting[1] === difficulty) {
-        console.log("Ooooh middle of the road")
-        setting = true;
+            } else if (difficultySetting[1] === difficulty) {
+                console.log("Ooooh middle of the road")
+                setting = true;
+
     while (!correct && !failed) {
-    let guess = prompt("What number do you think I'm thinking of?");
-    if (guess < answer) {
-            console.log("Higher")
-        } else {
-            console.log("Lower")
-        }
-    if (answer.toString() === guess) {
-        console.log(`Bingpot! You had ${guessesCount} guesses.`)
-        correct = true;
-    } else {
-        guessesCount++;
-        console.log("Guess again")
-        if (guessesCount > 3) {
-            failed = true;
-            console.log("You have failed for the last time")
-        }
+        let guess = prompt("What number do you think I'm thinking of?");
+            if (guess < answer) {
+                console.log("Higher")
+            } else {
+                console.log("Lower")
+            }
+            if (answer.toString() === guess) {
+                console.log(`Bingpot! You had ${guessesCount} guesses.`)
+                correct = true;
+            } else {
+                guessesCount++;
+                console.log("Guess again")
+            if (guessesCount > 3) {
+                failed = true;
+                console.log("You have failed for the last time")
+            }
+            }
     }
-}
-        }   else if (difficultySetting[2] === difficulty) {
-        console.log("Ooooh tricky")        
-        setting = true;
+            } else if (difficultySetting[2] === difficulty) {
+                console.log("Ooooh tricky")        
+                setting = true;
     while (!correct && !failed) {
-    let guess = prompt("What number do you think I'm thinking of?");
-    if (guess < answer1) {
-            console.log("Higher")
-        } else {
-            console.log("Lower")
-        }
-    if (answer1.toString() === guess) {
-        console.log(`Bingpot! You had ${guessesCount} guesses.`)
-        correct = true;
-    } else {
-        guessesCount++;
-        console.log("Guess again")
-        if (guessesCount > 8) {
-            failed = true;
-            console.log("You have failed for the last time")
-        }
-    }
-} 
-        }   else {
-        incorrectSetting = false;
-        console.log(invalidDifficulty)
-        }
+        let guess = prompt("What number do you think I'm thinking of?");
+            if (guess < answer1) {
+                console.log("Higher")
+            } else {
+                console.log("Lower")
+            }
+            if (answer1.toString() === guess) {
+                console.log(`Bingpot! You had ${guessesCount} guesses.`)
+                correct = true;
+            } else {
+                guessesCount++;
+                console.log("Guess again")
+            if (guessesCount > 8) {
+                failed = true;
+                console.log("You have failed for the last time")
+            }
+            }
+    } 
+            } else {
+                incorrectSetting = false;
+                console.log(invalidDifficulty)
+            }
     }
 </script>
 </body>
